@@ -5,8 +5,10 @@ import 'dart:convert';
 
 void main() => runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Weather App',
       home: Home(),
+
     )
 );
 
@@ -51,7 +53,7 @@ class _HomeState extends State<Home> {
           Container(
             height: MediaQuery.of(context).size.height / 3,
             width: MediaQuery.of(context).size.height,
-            color: Colors.deepPurple[900],
+            color: Colors.grey[900],
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +70,7 @@ class _HomeState extends State<Home> {
                 ),
                 ),
                Text(
-                temp != null ? temp.toString() + '\u00B0' : 'Loading',
+                temp != null ? temp.toStringAsFixed(1) + '\u00B0' : 'Loading',
                  style: TextStyle(
                    color: Colors.white,
                    fontSize: 40.0,
@@ -97,7 +99,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                      leading: FaIcon(FontAwesomeIcons.temperatureHalf),
                      title: Text('Temperature\u00B0'),
-                      trailing: Text(temp != null? temp.toString() + '\u00B0' + 'C' : 'Loading'),
+                      trailing: Text(temp != null? temp.toStringAsFixed(1) + '\u00B0' + 'C' : 'Loading'),
                 ),
                     ListTile(
                     leading: FaIcon(FontAwesomeIcons.cloud),
@@ -112,7 +114,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                     leading: FaIcon(FontAwesomeIcons.wind),
                     title: Text('Wind Speed'),
-                    trailing: Text(windSpeed != null ? windSpeed.toString() + ' mps' : 'Loading'),
+                    trailing: Text(windSpeed != null ? windSpeed.toStringAsFixed(1) + ' mps' : 'Loading'),
                     ),
                   ],
     ),
