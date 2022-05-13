@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -59,32 +60,33 @@ class _HomeState extends State<Home> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[ //added const as asked, then deleted
                 Padding(
-                    padding: EdgeInsets.only(bottom: 10.0),
+                    padding: EdgeInsets.all(
+                       10.0),
                     child: Text(
-                      'Currently in Niznny Novgorod',
-                      style: TextStyle(
+                      'Niznny Novgorod',
+                      style: GoogleFonts.roboto(
                         color: Colors.white,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w600
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w300
                       ),
                 ),
                 ),
                Text(
                 temp != null ? temp.toStringAsFixed(1) + '\u00B0' : 'Loading',
-                 style: TextStyle(
+                 style: GoogleFonts.roboto(
                    color: Colors.white,
-                   fontSize: 40.0,
-                   fontWeight: FontWeight.w600
+                   fontSize: 50.0,
+                   fontWeight: FontWeight.w400
                  ),
                ),
                 Padding(
                 padding: EdgeInsets.only(top: 10.0),
                 child: Text(
                   currently != null ? currently.toString() : 'Loading',
-                style: TextStyle(
+                  style: GoogleFonts.roboto(
                 color: Colors.white,
-                fontSize: 14.0,
-                fontWeight: FontWeight.w600
+                fontSize: 25.0,
+                fontWeight: FontWeight.w300
             ),
           )
                 ),
@@ -98,7 +100,7 @@ class _HomeState extends State<Home> {
                   children: <Widget>[
                     ListTile(
                      leading: FaIcon(FontAwesomeIcons.temperatureHalf),
-                     title: Text('Temperature\u00B0'),
+                     title: Text('Temperature'),
                       trailing: Text(temp != null? temp.toStringAsFixed(1) + '\u00B0' + 'C' : 'Loading'),
                 ),
                     ListTile(
